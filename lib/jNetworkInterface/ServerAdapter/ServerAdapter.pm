@@ -91,9 +91,10 @@ sub test {
         print "Error: Connection not established.\n";
         return 0;
     }
-    # Test the simple ping command. All servers have this.
-    if (not defined $self->send_command(command => "about")) {
-        print "Error: Could not execute command 'about' on remote server.\n";
+    # Test the simple version command. All servers have this directly embedded unless modified.
+    # In that case you probably know to change the below code.
+    if (not defined $self->send_command(command => "version")) {
+        print "Error: Could not execute command 'version' on remote server.\n";
         return 0;
     }
     # Passed test
