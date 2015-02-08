@@ -1,6 +1,6 @@
 #! /bin/env/ perl
 
-package ServerAdapter;
+package jNetworkInterface::ServerAdapter;
 
 use strict;
 use warnings;
@@ -92,8 +92,8 @@ sub test {
         return 0;
     }
     # Test the simple ping command. All servers have this.
-    if (not defined $self->send_command(command => "ping")) {
-        print "Error: Could not execute command 'ping' on remote server.\n";
+    if (not defined $self->send_command(command => "about")) {
+        print "Error: Could not execute command 'about' on remote server.\n";
         return 0;
     }
     # Passed test
